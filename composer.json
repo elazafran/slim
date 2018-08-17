@@ -4,5 +4,8 @@
         "propel/propel": "^2.0@alpha"
 
     },
+    "autoload":{
+        "classmap":["app/models/DB"]
+    },
     "minimum-stability" : "alpha"
 }
