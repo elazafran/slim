@@ -11,9 +11,33 @@ $app->get('/',function() use($app)
 })->name('note.index');
 
 
-$app->get('/new',function() use($app)
+$app->map('/new',function() use($app)
 {
-    echo "new note";
+    if($app->request->isGet()){
+        return $app->render('new.php');
+
+    }
+    $input = $app->request->post();
+    $slug = $input['title'];
+    //var_dump($input);
+
+    $note = new Notas();
+    $note->setTitle($input['title']);
+    $note->setSlug();
+    $note->setPost($input['post']);
+    $note->setCreated(date('Y-m-d H:i:s'));
+
+    $note->save();
+
+    $app->redirect(
+        $app->urlFor('note.view',['slug'=> $slug])
+    );
 
 
-})->name('note.new');
+})->via(['GET','POST'])->name('note.new');
+
+$app->get('/note/:slug', function($slug) use($app){
+
+
+
+})->name('note.view');

@@ -1,7 +1,8 @@
 {
     "require": {
         "slim/slim": "~2.0",
-        "propel/propel": "^2.0@alpha"
+        "propel/propel": "^2.0@alpha",
+        "cocur/slugify": "^3.1"
 
     },
     "autoload":{

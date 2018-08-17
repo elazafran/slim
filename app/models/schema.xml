@@ -24,7 +24,7 @@
           namespace="DB"
         >
 
-    <table name="notas" phpName="Notas">
+    <table name="nots" phpName="Note">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
         <column name="title" type="varchar" size="100" required="true"/>
         <column name="slug" type="varchar" size="100" required="true" primaryKey="true"/>
