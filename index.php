@@ -18,47 +18,35 @@ require 'vendor/autoload.php';
  * of setting names and values into the application constructor.
  */
 $app = new \Slim\Slim();
-/**
- * Step 3: Define the Slim application routes
- *
- * Here we define several Slim application routes that respond
- * to appropriate HTTP request methods. In this example, the second
- * argument for `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch`, and `Slim::delete`
- * is an anonymous function.
- */
-/*$app->get('/', function ($request, $response, $args) {
-    $response->write("Welcome to Slim!");
-    return $response;
-});*/
 
+/******************** Ruteador 4 condiciones ******************/
+function mw1()
+{
+    echo "hola ";
+}
 
-/******************** Ruteador ******************/
+function mw2()
+{
+    $app =\Slim\Slim::getInstance();//nos devuelve la instacia de ap que ya está creada
+    $app->redirect('/slim/inicio');
+}
 
+$app->get('/inicio',function (){
+    echo "<h1>inicio</h1>";
+    // http://localhost/slim/inicio
+});
 
-$app->map('/p/:id(/:slug)', function ($id, $slug="por defecto") use ($app) {
-    if ($app->request->isGet()){
-        echo " Get ";
-        echo " $id $slug ";
-        // http://localhost/slim/p/123/asd
-        // http://localhost/slim/p/123/
-    }else {
-        echo " post ";
+$app->get('/hola/:firstName(/:lastName)','mw1','mw2', function($firstName,$lastName="mohamed") use ($app){
+
+    if($app->request->isGet()){
+        echo "Hola $firstName $lastName ";
     }
+    // http://localhost/slim/hola/javier/aliaga
 
-    // http://localhost/slim/p/123/el%20se%C3%B1or%20de%20los%20a%C3%B1illos
+})->via(['GET','POST'])->conditions(array('lastName' => '[a-zA-Z]{3,}'))->name('blog.index');
 
-})->via(['GET','POST'])->conditions(['id' => '\d+'])->name('blog.index');
 
-// curl -X POST http://localhost/slimp/123/el%20se%C3%B1or%20de%20los%20a%C3%B1illos
 
-/**
- * Step 4: Run the Slim application
- *
- * This method should be called last. This executes the Slim application
- * and returns the HTTP response to the HTTP client.
- *
- * php -S localhost:8888 -t slim slim/index.php
- *
- */
+
 
 $app->run();
