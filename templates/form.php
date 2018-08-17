@@ -13,6 +13,8 @@
     <input type="text" name="name" placeholder="Username" />
     <textarea name="comment" placeholder="Comment" cols="30" rows="10"></textarea>
     <input type="submit" value="Send"/>
+<!--    la variable flash es un array por defecto de slim-->
 </form>
+    <?= $flash["warning"]?>
 </body>
 </html>
