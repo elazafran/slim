@@ -8,6 +8,11 @@
     <title>Template slim</title>
 </head>
 <body>
-    <h1>Plantilla con paso de variables <i><?php echo $name ." ", $surname?></i></h1>
+<form method="post" accept-charset="utf-8">
+
+    <input type="text" name="name" placeholder="Username" />
+    <textarea name="comment" placeholder="Comment" cols="30" rows="10"></textarea>
+    <input type="submit" value="Send"/>
+</form>
 </body>
 </html>

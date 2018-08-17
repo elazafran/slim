@@ -11,17 +11,21 @@ require 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
 
-$app->get('/',function () use ($app){
+$app->map('/',function () use ($app){
 
-    // opcion 1 para pasar parametros
-   // $app -> render('index.php',['name'=>'javier aliaga']);
+   if($app->request->isGet()){
+       $app -> render('form.php');
+   }elseif ($app->request->isPost()){
+       $name = $app->request->post('name');
+       $comment = $app->request->post('comment');
+       echo "$name : <em>$comment</em>";
+   } else {
+       echo $app->request->put('name');
+   }
 
-    // opcion 2 para pasar parametros
-    $name = "javier";
-    $surname = "aliaga";
-    $app -> render('index.php',compact('name','surname'), 404);
+
 
     // http://localhost/slim/inicio
-});
+})->via(['GET','POST','PUT']);
 
 $app->run();
