@@ -4,6 +4,7 @@
 session_start();
 
 require 'vendor/autoload.php';
+require 'app/config/database.php';
 $config = require 'app/config/config.php';
 
 // cookies encriptadas
