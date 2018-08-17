@@ -37,9 +37,26 @@ $app->map('/',function () use ($app){
        echo $app->request->put('name');
    }
 
-
-
     // http://localhost/slim/inicio
 })->via(['GET','POST','PUT']);
+
+$app->get('/user/javier_aliaga',function () use($app){
+    // $url = $app->urlFor('user.name',['name'=>'dani']);
+    // echo $url;
+    // $app->redirect($url);
+
+    echo "hola";
+    // el método pass permite pasar a la siguiente ruta que cumpla el patron
+    //$app->pass();
+    // es como poner un exit en un bucle
+    $app->stop();
+    echo "prueba";
+
+    // http://localhost/slim/user/javier_aliaga
+
+});
+$app->get('/user/:name',function ($name) use($app){
+    echo $name;
+})->name('user.name');
 
 $app->run();
