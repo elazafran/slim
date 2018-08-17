@@ -48,4 +48,18 @@ $app->get('/flash',function () use($app){
 
 });
 
+$app->get('/cache',function () use($app)
+{
+
+// enviamos un cabecera con el codigo 304 uqe indica al navegador que no hay que descargar nada
+    // metodo que se le pasa un identificador unico, como puede ser una cadena
+    $app->etag('adsfdsf32');
+    // dentro de una semana me manda esta respuesta
+    $app->lastModified(1286139652);
+    $app->expires('+1 week');
+    $app->render('form.php');
+
+
+});
+
 $app->run();
