@@ -15,7 +15,7 @@ use Propel\Runtime\Connection\ConnectionInterface;
 use Propel\Runtime\Exception\PropelException;
 
 /**
- * Base class that represents a query for the 'nots' table.
+ * Base class that represents a query for the 'notes' table.
  *
  *
  *
@@ -161,7 +161,7 @@ abstract class NoteQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, title, slug, post, created FROM nots WHERE id = :p0 AND slug = :p1';
+        $sql = 'SELECT id, title, slug, post, created FROM notes WHERE id = :p0 AND slug = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -441,7 +441,7 @@ abstract class NoteQuery extends ModelCriteria
     }
 
     /**
-     * Deletes all rows from the nots table.
+     * Deletes all rows from the notes table.
      *
      * @param ConnectionInterface $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).

@@ -20,7 +20,7 @@
                 <p>
                     <?= $note->getPost()?>
                 </p>
-                <a href="/edit/<?= $note->getId()?>">Editar Nota</a>
+                <a href="/slim/edit/<?= $note->getId()?>">Editar Nota</a>
     <!--            aunque se use el metodo delete es necesario poner method post-->
                 <form action="delete/<?= $note->getId()?>" method="post">
                     <input type="hidden" name="_METHOD" value="DELETE" />

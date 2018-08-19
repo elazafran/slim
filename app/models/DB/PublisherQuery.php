@@ -2,10 +2,10 @@
 
 namespace DB;
 
-use DB\Base\Note as BaseNote;
+use DB\Base\PublisherQuery as BasePublisherQuery;
 
 /**
- * Skeleton subclass for representing a row from the 'notes' table.
+ * Skeleton subclass for performing query and update operations on the 'publisher' table.
  *
  *
  *
@@ -14,7 +14,7 @@ use DB\Base\Note as BaseNote;
  * long as it does not already exist in the output directory.
  *
  */
-class Note extends BaseNote
+class PublisherQuery extends BasePublisherQuery
 {
 
 }

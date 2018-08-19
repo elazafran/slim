@@ -10,13 +10,11 @@
 </head>
 <body>
 <section class="container-fluid">
-
-    <form  method="post">
-        <input type="text" placeholder="Titulo" name="title" />
-        <textarea name="post" id="" cols="30" rows="10"></textarea>
-        <input type="submit" value="Guardar nota" />
-    </form>
-
+    <h1><?= $note->getTitle()?></h1>
+    <p><?= nl2br($note->getPost());?></p>
 </section>
+<footer>
+    <a href="<?= $url ?>">Volver</a>
+</footer>
 </body>
 </html>

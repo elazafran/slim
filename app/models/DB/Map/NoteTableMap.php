@@ -16,7 +16,7 @@ use Propel\Runtime\Map\TableMapTrait;
 
 
 /**
- * This class defines the structure of the 'nots' table.
+ * This class defines the structure of the 'notes' table.
  *
  *
  *
@@ -44,7 +44,7 @@ class NoteTableMap extends TableMap
     /**
      * The table name for this class
      */
-    const TABLE_NAME = 'nots';
+    const TABLE_NAME = 'notes';
 
     /**
      * The related Propel class for this table
@@ -74,27 +74,27 @@ class NoteTableMap extends TableMap
     /**
      * the column name for the id field
      */
-    const COL_ID = 'nots.id';
+    const COL_ID = 'notes.id';
 
     /**
      * the column name for the title field
      */
-    const COL_TITLE = 'nots.title';
+    const COL_TITLE = 'notes.title';
 
     /**
      * the column name for the slug field
      */
-    const COL_SLUG = 'nots.slug';
+    const COL_SLUG = 'notes.slug';
 
     /**
      * the column name for the post field
      */
-    const COL_POST = 'nots.post';
+    const COL_POST = 'notes.post';
 
     /**
      * the column name for the created field
      */
-    const COL_CREATED = 'nots.created';
+    const COL_CREATED = 'notes.created';
 
     /**
      * The default string format for model objects of the related table
@@ -139,7 +139,7 @@ class NoteTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('nots');
+        $this->setName('notes');
         $this->setPhpName('Note');
         $this->setIdentifierQuoting(false);
         $this->setClassName('\\DB\\Note');
@@ -452,7 +452,7 @@ class NoteTableMap extends TableMap
     }
 
     /**
-     * Deletes all rows from the nots table.
+     * Deletes all rows from the notes table.
      *
      * @param ConnectionInterface $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).

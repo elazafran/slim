@@ -2,10 +2,10 @@
 
 namespace DB;
 
-use DB\Base\Note as BaseNote;
+use DB\Base\Author as BaseAuthor;
 
 /**
- * Skeleton subclass for representing a row from the 'notes' table.
+ * Skeleton subclass for representing a row from the 'author' table.
  *
  *
  *
@@ -14,7 +14,7 @@ use DB\Base\Note as BaseNote;
  * long as it does not already exist in the output directory.
  *
  */
-class Note extends BaseNote
+class Author extends BaseAuthor
 {
 
 }

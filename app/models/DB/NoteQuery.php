@@ -5,7 +5,7 @@ namespace DB;
 use DB\Base\NoteQuery as BaseNoteQuery;
 
 /**
- * Skeleton subclass for performing query and update operations on the 'nots' table.
+ * Skeleton subclass for performing query and update operations on the 'notes' table.
  *
  *
  *

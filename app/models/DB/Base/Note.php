@@ -21,7 +21,7 @@ use Propel\Runtime\Parser\AbstractParser;
 use Propel\Runtime\Util\PropelDateTime;
 
 /**
- * Base class that represents a row from the 'nots' table.
+ * Base class that represents a row from the 'notes' table.
  *
  *
  *
@@ -768,7 +768,7 @@ abstract class Note implements ActiveRecordInterface
         }
 
         $sql = sprintf(
-            'INSERT INTO nots (%s) VALUES (%s)',
+            'INSERT INTO notes (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );

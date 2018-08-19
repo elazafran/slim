@@ -12,9 +12,10 @@
 <section class="container-fluid">
 
     <form  method="post">
-        <input type="text" placeholder="Titulo" name="title" />
-        <textarea name="post" id="" cols="30" rows="10"></textarea>
-        <input type="submit" value="Guardar nota" />
+        <input type="hidden" name="_METHOD" value="PUT" >
+        <input type="text" placeholder="Titulo" name="title" value="<?= $note->getTitle(); ?>"/>
+        <textarea name="post" ><?= $note->getPost(); ?></textarea>
+        <input type="submit" value="actualizar" />
     </form>
 
 </section>

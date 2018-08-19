@@ -5,8 +5,8 @@ $serviceContainer->setAdapterClass('default', 'mysql');
 $manager = new \Propel\Runtime\Connection\ConnectionManagerSingle();
 $manager->setConfiguration(array (
   'dsn' => 'mysql:host=localhost;port=3306;dbname=notepad',
-  'user' => 'root',
-  'password' => '',
+  'user' => 'elazafran',
+  'password' => 'piramide',
   'settings' =>
   array (
     'charset' => 'utf8',
